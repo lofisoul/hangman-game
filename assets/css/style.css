@@ -1,0 +1,81 @@
+.start-screen {
+  width:100%;
+  height:100%;
+  position:fixed;
+  background:#000;
+  opacity:1;
+  transition: all .7s ease-in-out;
+  top:0;
+  left:0;
+}
+
+.start-screen.game-on {
+  opacity:0;
+  top:-100%;
+}
+
+.start-info {
+  width:75%;
+  max-width:450px;
+  transform:translate(-50%, -50%);
+  background:#fff;
+  position:absolute;
+  left:50%;
+  top:50%;
+  padding:30px;
+}
+
+.starting {
+  -webkit-animation: blink .5s infinite;
+  -moz-animation:    blink .5s infinite;
+  -o-animation:      blink .5s infinite;
+  animation:         blink .5s infinite;
+}
+
+@-webkit-keyframes blink {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes blink {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes blink {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes blink {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.body-part {
+  visibility: hidden;
+  transition: visibility .5s ease-in-out;
+}
+
+.body-part.wrong-guess {
+  visibility: visible;
+}
+
+.answer {
+  text-align: center;
+  margin-bottom:10px;
+}
+
+.guess-box {
+  width:20px;
+  height:20px;
+  padding:5px;
+  border:1px solid #ccc;
+  display: inline-block;
+  margin:0 5px;
+  position:relative;
+}
+
+.guess-box  > span {
+  position:absolute;
+  transform:translate(-50%, -50%);
+  left: 50%;
+  top:50%;
+}

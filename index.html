@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NBA Hang(time)man</title>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/grid.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="start-screen">
+  <div class="start-info">
+    <h1>NBA Hang(time)man!</h1>
+    <p>Guess the NBA player's name using the keyboard. You get six guesses before you get POSTERIZED.</p>
+    <p class="starting">Press any key to start</p>
+  </div>
+</div>
+<section class="score-board">
+  <div class="score-box">
+     <h3>Wins</h3>
+     <div id="wins"></div>
+  <div class="score-box">
+    <h3>Losses</h3>
+    <div id="losses"></div>
+  </div>
+  <div class="score-box">
+    <h3>Guesses Remaining</h3>
+    <div id="guesses"></div>
+  </div>
+</section>
+<section class="hangman">
+  <div class="body-part" id="head">Head</div>
+  <div class="body-part" id="torso">Torso</div>
+  <div class="body-part" id="arm-L">Arm</div>
+  <div class="body-part" id="arm-R">Arm</div>
+  <div class="body-part" id="leg-L">Leg</div>
+  <div class="body-part" id="leg-R">Leg</div>
+</section>
+<section class="mystery-box">
+  <div class="first-name answer clearfix"></div>
+  <div class="last-name answer clearfix"></div>
+</section>
+
+
+<script src="assets/js/game.js"></script>
+</body>
+</html>
