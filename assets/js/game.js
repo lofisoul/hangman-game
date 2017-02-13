@@ -42,7 +42,6 @@ var answer; //this is the player's first name and last name [not sure if this sh
 var isStarted = false; // the game is off to start
 var guesses = 0 // this is a counter of the number of guesses that you make
 var wrongGuesses = 6 // when this hits 0 then the game is over and you lose
-var clickCount = 0 //maybe need this for game start
 var lettersGuessed = [];
 var correctGuesses = [];
 
@@ -85,6 +84,10 @@ function generatePlayer() {
   });
   console.log(answer)
   return answer;
+}
+
+function destroyPlayer() {
+  $('.first-name > div, .last-name > div').remove();
 }
 
 function stringThatArr(name) {
@@ -154,10 +157,9 @@ function isInArray(arr, item) {
 
 function winGame() {
   if(answer.length === correctGuesses.length) {
-  alert('You win!');
   wins++;
   $('#wins').html(wins);
-  playAgain('winning');
+  playAgain('win');
   }
 }
 
@@ -165,13 +167,26 @@ function loseGame() {
   if(wrongGuesses === 0) {
     losses++;
     $('#losses').html(losses);
-    playAgain('losing');
-    alert('you lose!');
+    playAgain('lose');
   }
 }
 
 function playAgain(className) {
-  $('.stage').removeClass('game-on').addClass(className);
+  isStarted = false;
+  answer; //this is the player's first name and last name [not sure if this should be an array]
+  guesses = 0 // this is a counter of the number of guesses that you make
+  wrongGuesses = 6 // when this hits 0 then the game is over and you lose
+  lettersGuessed = [];
+  correctGuesses = [];
+  // console.log('is started: ' + isStarted);
+  // console.log('answer: ' + answer);
+  // console.log('guesses: ' + guesses);
+  // console.log('wrongGuesses: ' + wrongGuesses);
+  // console.log('correctGuesses: ' + correctGuesses);
+  destroyPlayer();
+  $('.start-screen').removeClass('game-on').addClass(className);
+  $('.outcome').text(className);
+
 }
 
 $(window).on('keyup', startGame);
