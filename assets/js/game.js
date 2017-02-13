@@ -113,14 +113,14 @@ function guessLetter(e) {
     console.log('This Letter is in the answer ' + correctGuesses);
     var guessDiv = $('.guess-box[data-letter="'+e.key+'"]');
     $(guessDiv).html('<span>' + e.key + '</span>');
-    winGame();
+    setTimeout(winGame,800);
     }
     else {
       //wrong guess
       console.log('This is a wrong Guess!');
       wrongGuesses--;
       $('#guesses').html(wrongGuesses);
-      loseGame();
+      setTimeout(loseGame,800);
     }
   //this should take 2 conditions --> right guess and wrong guess
   //right guess adds letters to guess boxes
@@ -186,7 +186,6 @@ function playAgain(className) {
   destroyPlayer();
   $('.start-screen').removeClass('game-on').addClass(className);
   $('.outcome').text(className);
-
 }
 
 $(window).on('keyup', startGame);
