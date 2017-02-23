@@ -114,12 +114,14 @@ function guessLetter(e) {
     var guessDiv = $('.guess-box[data-letter="'+e.key+'"]');
     $(guessDiv).html('<span>' + e.key + '</span>');
     setTimeout(winGame,800);
+    // winGame();
     }
     else {
       //wrong guess
       console.log('This is a wrong Guess!');
       wrongGuesses--;
       $('#guesses').html(wrongGuesses);
+      //loseGame();
       setTimeout(loseGame,800);
     }
   //this should take 2 conditions --> right guess and wrong guess
@@ -187,6 +189,30 @@ function playAgain(className) {
   $('.start-screen').removeClass('game-on').addClass(className);
   $('.outcome').text(className);
 }
+
+// var hangman = {
+//   head: {label:'my head', id: 'head', image:}
+//   },
+//   {
+//     bodyPartID: torso;
+//   },
+//   {
+//     bodyPartID: armL;
+//   },
+//   {
+//     bodyPartID: armR;
+//   },
+//   {
+//     bodyPartID: legL;
+//   },
+//   {
+//     bodyPartID: legR;
+//   }
+// ];
+//
+// function displayHangman(id) {
+//   hangman.bodyPartID.id;
+// }
 
 $(window).on('keyup', startGame);
 $(window).on('keydown', playGame);
